@@ -2,145 +2,494 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b1f38">
-<title>ФЦСП «ФЕНИКС»</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071a2e">
+<meta name="description" content="Федеральный Центр Специальной Подготовки (ФЦСП «ФЕНИКС») — каталог программ обучения и личный кабинет слушателя.">
+<title>ФЦСП «ФЕНИКС» — Федеральный Центр Специальной Подготовки</title>
 <link id="favicon" rel="icon" type="image/svg+xml">
 <script>
-(function(){
-  const f=document.getElementById('favicon');
-  function set(){
-    const dark=window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const bg=dark?'#fff':'#0b1f38',fg=dark?'#0b1f38':'#fff';
-    f.href='data:image/svg+xml;charset=utf-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="'+bg+'"/><path d="M17 15h30v7H25v9h19v7H25v11h-8V15z" fill="'+fg+'"/></svg>');
-  }
-  set(); window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',set);
+(() => {
+  const f = document.getElementById('favicon');
+  const set = () => {
+    const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+    const bg = dark ? '#ffffff' : '#071a2e';
+    const fg = dark ? '#071a2e' : '#ffffff';
+    f.href = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="${bg}"/><path d="M17 15h30v7H25v9h19v7H25v11h-8V15z" fill="${fg}"/></svg>`);
+  };
+  set();
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', set);
 })();
 </script>
 <style>
-:root{--navy:#0a1c31;--navy2:#102943;--blue:#1769aa;--blue2:#2b83c6;--sky:#eaf4fb;--gold:#b89555;--text:#172437;--muted:#667487;--line:#dce4ec;--bg:#f3f6f9;--white:#fff;--green:#16834b;--shadow:0 18px 50px rgba(9,30,52,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}body.lock{overflow:hidden}a{text-decoration:none;color:inherit}button,input{font:inherit}.container{width:min(1240px,calc(100% - 64px));margin:auto}
-.topline{height:32px;background:#061525;color:#aab8c9;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.topline .container{height:100%;display:flex;align-items:center;justify-content:space-between}
-.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);border-bottom:1px solid rgba(220,228,236,.9);backdrop-filter:blur(18px)}.nav{min-height:82px;display:flex;align-items:center;gap:32px}.brand{display:flex;align-items:center;gap:13px;margin-right:auto;min-width:260px}.brand-mark{width:46px;height:46px;object-fit:contain;display:block}.brand-text strong{display:block;color:var(--navy);font-size:14px;line-height:1.1}.brand-text span{display:block;color:#7c8998;font-size:9px;text-transform:uppercase;letter-spacing:.1em;margin-top:4px}.navlinks{display:flex;align-items:center;gap:28px;font-size:12px;font-weight:700;color:#405069}.navlinks a{position:relative;padding:31px 0}.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:23px;height:2px;background:var(--blue);transition:.2s}.navlinks a:hover{color:var(--blue)}.navlinks a:hover:after{right:0}.header-actions{display:flex;gap:20px;align-items:center}.header-contacts{display:flex;align-items:center;gap:20px}.header-contact{display:flex;flex-direction:column;gap:2px}.header-contact span{color:#8a97a7;font-size:8px;text-transform:uppercase;letter-spacing:.1em;font-weight:900}.header-contact strong{color:var(--navy);font-size:11px;white-space:nowrap}.header-contact a:hover{color:var(--blue)}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border:1px solid transparent;border-radius:3px;font-size:12px;font-weight:800;cursor:pointer;transition:transform .2s,background .2s,border .2s,box-shadow .2s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(23,105,170,.18)}.btn-primary:hover{background:#105c96}.btn-outline{background:#fff;border-color:#c2ceda;color:var(--navy)}.btn-outline:hover{border-color:var(--blue);color:var(--blue)}.full{width:100%}
-.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 82% 18%,rgba(53,128,184,.28),transparent 28%),radial-gradient(circle at 55% 100%,rgba(23,105,170,.18),transparent 35%),linear-gradient(118deg,#07192b 0%,#0b2340 58%,#12395c 100%);color:#fff;padding:82px 0 86px}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(90deg,black 0%,rgba(0,0,0,.45) 58%,transparent 100%);pointer-events:none}.hero:after{content:"";position:absolute;width:520px;height:520px;right:-210px;bottom:-270px;border:1px solid rgba(255,255,255,.1);border-radius:50%;box-shadow:0 0 0 70px rgba(255,255,255,.018),0 0 0 140px rgba(255,255,255,.012);pointer-events:none}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(360px,.68fr);gap:72px;align-items:center}.hero-logo{display:flex;align-items:center;gap:22px;width:max-content;max-width:100%;margin-bottom:30px;padding:12px 24px 12px 12px;background:#fff;border:1px solid rgba(255,255,255,.95);border-radius:10px;box-shadow:0 22px 60px rgba(0,0,0,.34)}.hero-logo img{width:104px;height:104px;object-fit:contain;display:block}.hero-logo strong{display:block;color:var(--navy);font-size:17px;line-height:1.2;max-width:370px}.hero-logo span{display:block;margin-top:8px;color:var(--blue);font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.eyebrow,.kicker{font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.eyebrow{color:#8fb9dd;margin-bottom:16px}.hero h1{font-size:clamp(44px,5.4vw,74px);line-height:.98;letter-spacing:-.055em;margin:0 0 25px;max-width:760px}.hero h1 span{color:#8fc5ed}.hero p{max-width:660px;color:#c7d5e3;font-size:17px;line-height:1.65;margin:0 0 31px}.hero-actions{display:flex;gap:11px;flex-wrap:wrap}.hero .btn-outline{background:rgba(255,255,255,.03);border-color:#64809c;color:#fff}.hero-card{position:relative;padding:34px;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.18);box-shadow:0 28px 70px rgba(0,0,0,.2);backdrop-filter:blur(8px)}.hero-card .big{font-size:62px;font-weight:900;line-height:1;letter-spacing:-.06em;color:#fff}.hero-card p{font-size:13px;line-height:1.5;margin:9px 0 24px;color:#afc1d2}.hero-list{border-top:1px solid rgba(255,255,255,.15)}.hero-list div{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:12px;color:#d9e3ec}.hero-list div:before{content:"";display:inline-block;width:6px;height:6px;background:#73b5e6;border-radius:50%;margin:0 11px 1px 0}
-.stats{background:#fff;border-bottom:1px solid var(--line)}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}.stat{padding:25px 26px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border:0}.stat strong{display:block;color:var(--navy);font-size:25px;letter-spacing:-.02em}.stat span{color:var(--muted);font-size:11px}
-.section{padding:96px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:42px}.kicker{color:var(--blue);margin-bottom:10px}.section h2{font-size:clamp(32px,4vw,50px);line-height:.99;letter-spacing:-.045em;color:var(--navy);margin:0}.section-head p{max-width:510px;color:var(--muted);font-size:13px;line-height:1.65;margin:0}
-.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.program{position:relative;min-height:235px;padding:27px 27px 25px;border:1px solid var(--line);background:#fff;display:flex;flex-direction:column;cursor:pointer;transition:.25s;overflow:hidden}.program:before{content:"";position:absolute;left:0;top:0;width:0;height:3px;background:var(--blue);transition:.25s}.program:hover{border-color:#b8c7d6;transform:translateY(-4px);box-shadow:var(--shadow)}.program:hover:before{width:100%}.program-number{font-size:9px;font-weight:900;letter-spacing:.12em;color:#9aa5b3}.program h3{color:var(--navy);font-size:20px;line-height:1.12;letter-spacing:-.02em;margin:30px 0 12px;max-width:280px}.program p{font-size:12px;line-height:1.55;color:var(--muted);margin:0;max-width:320px}.program-arrow{margin-top:auto;align-self:flex-end;color:var(--blue);font-size:26px;line-height:1}
-.band{background:var(--navy);color:#fff;padding:78px 0}.band-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.band h2{font-size:clamp(32px,4vw,50px);line-height:1.02;letter-spacing:-.045em;margin:0}.band p{color:#b9c7d6;font-size:14px;line-height:1.65}.directions,.docs,.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.direction,.doc{padding:29px;background:#fff;border:1px solid var(--line);min-height:150px}.direction strong,.doc h3{display:block;color:var(--navy);font-size:16px;margin:0 0 9px}.direction span,.doc p{font-size:12px;line-height:1.55;color:var(--muted)}.doc-num{color:var(--gold);font-weight:900;font-size:10px}.doc h3{margin-top:22px}.steps{grid-template-columns:repeat(4,1fr)}.step{padding:25px;background:#fff;border-top:3px solid var(--blue)}.step b{font-size:28px;color:#c5d0dc}.step h3{font-size:15px;color:var(--navy);margin:17px 0 7px}.step p{font-size:11px;color:var(--muted);margin:0;line-height:1.55}
-.cta{padding:70px;background:linear-gradient(135deg,#e8f2fa,#f4f8fb);border:1px solid #dbe8f2}.cta-box{display:flex;justify-content:space-between;align-items:center;gap:35px}.cta h2{font-size:40px;line-height:1;letter-spacing:-.04em;color:var(--navy);margin:0}.cta p{color:var(--muted);font-size:13px}.footer{padding:48px 0;background:#061525;color:#91a3b8}.footer-grid{display:flex;justify-content:space-between;gap:50px}.footer strong{color:#fff}.requisites{margin-top:14px;line-height:1.75;font-size:11px}
-.overlay{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:28px;background:rgba(4,13,24,.82);backdrop-filter:blur(12px)}.overlay.show{display:flex}.modal{width:min(1080px,100%);max-height:calc(100vh - 56px);overflow:auto;background:#fff;box-shadow:0 35px 100px rgba(0,0,0,.4)}.modal-small{width:min(520px,100%);padding:38px;position:relative}.close{position:absolute;right:18px;top:18px;width:42px;height:42px;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:27px;cursor:pointer;border-radius:3px}.close:hover{background:var(--sky);color:var(--blue)}.modal-head{display:flex;justify-content:space-between;gap:25px;padding:38px 42px 29px;border-bottom:1px solid var(--line)}.modal-head h2{margin:0 0 8px;color:var(--navy);font-size:40px;line-height:1.02;letter-spacing:-.04em}.modal-head p{margin:0;color:var(--muted);font-size:13px}.demo-note{margin:22px 42px 0;padding:13px 15px;border-left:3px solid var(--gold);background:#f7f8fa;color:var(--muted);font-size:11px}.demo-note b{color:var(--gold);margin-right:9px}.catalog-list{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:23px 42px 42px}.catalog-card{padding:25px;border:1px solid var(--line);display:flex;flex-direction:column;transition:.2s}.catalog-card:hover{border-color:#aebfd0;box-shadow:0 12px 30px rgba(11,31,56,.07)}.catalog-top{display:flex;justify-content:space-between;gap:15px;margin-bottom:18px}.catalog-type{font-size:9px;color:var(--blue);font-weight:900;letter-spacing:.08em}.code{font-size:10px;color:#9aa5b3;font-weight:800}.catalog-card h3{min-height:58px;margin:0 0 20px;color:var(--navy);font-size:18px;line-height:1.22}.info-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line);margin-bottom:20px}.info{padding:11px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.info span{display:block;color:var(--muted);font-size:9px;margin-bottom:3px}.info strong{font-size:12px;color:var(--text)}
-.course-top{padding:36px 42px;background:linear-gradient(120deg,#081b30,#123657);color:#fff}.course-top .kicker{color:#8fb9dd}.course-top h2{font-size:40px;line-height:1.06;letter-spacing:-.04em;margin:10px 0 8px;max-width:780px}.course-code{font-size:10px;color:#a7b9cb;font-weight:800;letter-spacing:.08em}.course-body{padding:34px 42px}.course-meta{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-bottom:34px}.course-meta div{padding:17px;border-right:1px solid var(--line)}.course-meta div:last-child{border:0}.course-meta span{display:block;color:var(--muted);font-size:9px;margin-bottom:4px}.course-meta strong{font-size:14px;color:var(--navy)}.course-columns{display:grid;grid-template-columns:1fr 300px;gap:48px}.course-section h3{color:var(--navy);font-size:19px;margin:0 0 10px}.course-section p{color:var(--muted);font-size:13px;line-height:1.65}.course-section h3:not(:first-child){margin-top:30px}.points{padding:0;margin:0;list-style:none}.points li{padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.points li:before{content:'✓';color:var(--green);font-weight:900;margin-right:9px}.buy{padding:24px;border:1px solid var(--line);height:max-content;position:sticky;top:10px;background:#fbfcfd}.price{font-size:30px;color:var(--navy);font-weight:900;margin:8px 0}.price-note{font-size:10px;color:var(--muted);margin-bottom:18px}.buy .btn{margin-top:9px}
-.form h2{font-size:31px;color:var(--navy);margin:0 0 8px}.form p{color:var(--muted);font-size:13px}.form input{width:100%;height:52px;border:1px solid var(--line);padding:0 15px;margin-top:10px;outline:none;background:#fff}.form input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,105,170,.08)}.form .btn{margin-top:12px}.form-note{font-size:10px;color:var(--muted);margin-top:9px}
-.cabinet-shell{width:min(1080px,100%);max-height:calc(100vh - 56px);overflow:auto;background:#f4f7fa;box-shadow:0 35px 100px rgba(0,0,0,.4)}.cabinet-header{background:#fff;border-bottom:1px solid var(--line);padding:20px 28px;display:flex;justify-content:space-between;align-items:center}.cabinet-user{display:flex;align-items:center;gap:12px}.avatar{width:42px;height:42px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}.cabinet-user strong{display:block;color:var(--navy)}.cabinet-user span{font-size:10px;color:var(--muted)}.cabinet-layout{display:grid;grid-template-columns:190px 1fr;min-height:520px}.cabinet-nav{background:#fff;border-right:1px solid var(--line);padding:18px 12px}.cabinet-nav button{width:100%;padding:12px;border:0;background:transparent;text-align:left;color:#56667a;cursor:pointer;font-size:12px;border-radius:3px}.cabinet-nav button.active{background:var(--sky);color:var(--navy);font-weight:800}.cabinet-main{padding:32px}.cabinet-main h2{margin:0;color:var(--navy);font-size:30px}.cabinet-main>p{margin:5px 0 24px;color:var(--muted);font-size:12px}.cabinet-course-card{padding:23px;background:#fff;border:1px solid var(--line)}.cabinet-course-card .top{display:flex;justify-content:space-between;gap:15px}.status{font-size:10px;color:var(--green);background:#e8f5ee;padding:7px 10px;height:max-content}.cabinet-course-card h3{margin:6px 0 15px;color:var(--navy);font-size:18px}.progress{height:8px;background:#e7edf2}.progress i{display:block;width:38%;height:100%;background:var(--blue)}.progress-row{display:flex;justify-content:space-between;margin-top:8px;font-size:10px;color:var(--muted)}.cabinet-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.tile{padding:18px;background:#fff;border:1px solid var(--line)}.tile b{display:block;color:var(--navy);font-size:23px}.tile span{font-size:10px;color:var(--muted)}.cabinet-panel{background:#fff;border:1px solid var(--line);padding:24px}.cabinet-panel h3{margin-top:0;color:var(--navy)}.lesson-list{list-style:none;padding:0;margin:0}.lesson{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:15px 0;border-bottom:1px solid var(--line);cursor:pointer}.lesson:last-child{border:0}.lesson b{color:var(--navy);font-size:12px}.lesson span{color:var(--muted);font-size:10px}.material{margin-top:20px;padding:20px;background:#f7f9fb;border:1px solid var(--line);display:none}.material.show{display:block}.material h4{margin:0 0 7px;color:var(--navy)}.material p{font-size:12px;color:var(--muted);margin:0}.document-row{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}.document-row:last-child{border:0}.document-row strong{color:var(--navy);font-size:12px}.document-row span{font-size:10px;color:var(--muted);text-align:right}
-@media(max-width:1100px){.container{width:min(100% - 44px,1240px)}.header-actions{gap:10px}.header-contacts{display:none}.navlinks{gap:20px}.hero-grid{grid-template-columns:1fr .7fr;gap:40px}.hero-logo img{width:96px;height:96px}.hero-logo{gap:17px}.programs{grid-template-columns:1fr 1fr}.course-columns{grid-template-columns:1fr}.buy{position:static}.directions{grid-template-columns:1fr 1fr}}
-@media(max-width:760px){
-body{overflow-x:hidden}.container{width:calc(100% - 28px)}.topline{height:28px}.topline .container span:first-child{font-size:9px}.topline .container span:last-child{display:none}.nav{min-height:68px;gap:10px}.brand{min-width:0;gap:9px}.brand-mark{width:40px;height:40px}.brand-text strong{font-size:12px}.brand-text span{display:none}.navlinks{display:none}.header-actions{margin-left:auto}.cabinet-btn{min-height:42px;padding:0 12px;font-size:10px;white-space:nowrap}.hero{padding:48px 0 46px}.hero-grid{display:flex;flex-direction:column;gap:28px;align-items:stretch}.hero-logo{display:flex;width:100%;margin-bottom:25px;padding:10px;gap:13px;border-radius:8px}.hero-logo img{width:78px;height:78px;flex:0 0 78px}.hero-logo strong{font-size:14px}.hero-logo span{font-size:9px}.eyebrow{font-size:9px;margin-bottom:12px}.hero h1{font-size:43px;line-height:.97;margin-bottom:18px}.hero p{font-size:14px;line-height:1.55;margin-bottom:23px}.hero-actions{display:grid;grid-template-columns:1fr;gap:9px}.hero-actions .btn{width:100%;min-height:52px}.hero-card{padding:23px}.hero-card .big{font-size:48px}.hero-card p{margin-bottom:18px}.hero-list div{padding:12px 0}.stats-grid{grid-template-columns:1fr 1fr}.stat{padding:20px 15px;border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat:nth-child(3){padding-left:15px}.stat strong{font-size:21px}.stat span{font-size:10px}.section{padding:64px 0}.section-head{display:block;margin-bottom:28px}.section h2{font-size:36px}.section-head p{margin-top:15px;font-size:12px}.programs{grid-template-columns:1fr;gap:10px}.program{min-height:190px;padding:22px}.program h3{font-size:19px;margin:24px 0 10px}.directions,.docs,.steps{grid-template-columns:1fr}.direction,.doc{min-height:auto;padding:22px}.steps{gap:10px}.step{padding:20px}.band{padding:55px 0}.band-grid{grid-template-columns:1fr;gap:25px}.cta{padding:35px 22px}.cta-box{display:block}.cta h2{font-size:32px}.cta .btn{width:100%;margin-top:18px}.footer{padding:38px 0}.footer-grid{display:block}.footer-grid>div+div{margin-top:25px}.requisites{font-size:10px}.overlay{padding:10px;align-items:flex-start}.modal{max-height:calc(100vh - 20px)}.modal-small{padding:28px 20px}.close{right:12px;top:12px;width:38px;height:38px}.modal-head{padding:26px 18px 20px}.modal-head h2{font-size:29px;padding-right:35px}.modal-head p{font-size:12px}.demo-note{margin:17px 18px 0}.catalog-list{grid-template-columns:1fr;padding:17px 18px 22px}.catalog-card{padding:20px}.catalog-card h3{min-height:auto;font-size:17px}.course-top{padding:25px 18px}.course-top h2{font-size:29px;padding-right:25px}.course-body{padding:22px 18px}.course-meta{grid-template-columns:1fr 1fr;margin-bottom:24px}.course-meta div{padding:13px}.course-meta div:nth-child(2){border-right:0}.course-meta div:nth-child(3){border-right:1px solid var(--line)}.course-columns{gap:24px}.buy{padding:20px}.cabinet-shell{max-height:calc(100vh - 20px)}.cabinet-header{padding:15px}.cabinet-user span{display:none}.cabinet-layout{grid-template-columns:1fr;min-height:0}.cabinet-nav{display:flex;overflow-x:auto;padding:8px;border-right:0;border-bottom:1px solid var(--line);gap:4px}.cabinet-nav button{width:auto;white-space:nowrap;padding:10px 12px}.cabinet-main{padding:18px}.cabinet-main h2{font-size:27px}.cabinet-course-card .top{display:block}.status{display:inline-block;margin-top:10px}.cabinet-tiles{grid-template-columns:1fr 1fr}.tile:last-child{grid-column:1/-1}.document-row{display:block}.document-row span{display:block;text-align:left;margin-top:5px}.lesson{display:block}.lesson span{display:block;margin-top:5px}.price{font-size:28px}
+:root{
+  --ink:#0a1b2e;
+  --ink-2:#102942;
+  --blue:#1769aa;
+  --blue-2:#3b82c4;
+  --blue-soft:#eaf3fa;
+  --gold:#b89555;
+  --paper:#ffffff;
+  --surface:#f5f7f9;
+  --surface-2:#eef2f5;
+  --text:#18283a;
+  --muted:#69788a;
+  --line:#dbe3ea;
+  --green:#177b4a;
+  --shadow:0 20px 60px rgba(8,28,49,.10);
+  --radius:12px;
 }
-@media(max-width:380px){.container{width:calc(100% - 22px)}.brand-text strong{font-size:11px}.cabinet-btn{padding:0 9px}.hero h1{font-size:39px}.hero-logo strong{font-size:13px}.hero-logo img{width:68px;height:68px;flex-basis:68px}.section h2{font-size:32px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--surface);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{width:min(1200px,calc(100% - 48px));margin:0 auto}
+
+/* Header */
+.utility{height:34px;background:#061525;color:#a9b7c6;font-size:10px;letter-spacing:.09em;text-transform:uppercase}
+.utility .container{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.utility-right{display:flex;gap:24px}
+.header{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.94);border-bottom:1px solid rgba(219,227,234,.9);backdrop-filter:blur(18px)}
+.nav{min-height:78px;display:flex;align-items:center;gap:30px}
+.brand{display:flex;align-items:center;gap:12px;min-width:300px;margin-right:auto}
+.brand img{width:44px;height:44px;object-fit:contain;display:block}
+.brand-copy strong{display:block;font-size:13px;line-height:1.05;letter-spacing:-.01em;color:var(--ink)}
+.brand-copy span{display:block;margin-top:5px;font-size:8px;line-height:1;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:#7a8897}
+.navlinks{display:flex;align-items:center;gap:25px;color:#42556a;font-size:12px;font-weight:750}
+.navlinks a{position:relative;padding:30px 0}
+.navlinks a::after{content:"";position:absolute;left:0;right:100%;bottom:20px;height:2px;background:var(--blue);transition:right .2s ease}
+.navlinks a:hover{color:var(--blue)}
+.navlinks a:hover::after{right:0}
+.header-right{display:flex;align-items:center;gap:22px}
+.contacts{display:flex;gap:18px}
+.contact{display:flex;flex-direction:column;gap:2px}
+.contact small{font-size:8px;color:#8996a5;text-transform:uppercase;letter-spacing:.11em;font-weight:850}
+.contact a{font-size:11px;color:var(--ink);font-weight:800;white-space:nowrap}
+.contact a:hover{color:var(--blue)}
+.menu{display:none;width:44px;height:44px;border:1px solid var(--line);background:#fff;border-radius:8px;color:var(--ink);font-size:20px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:7px;border:1px solid transparent;font-size:12px;font-weight:800;letter-spacing:.005em;transition:transform .18s ease,background .18s ease,border-color .18s ease,box-shadow .18s ease;color:var(--ink)}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 24px rgba(23,105,170,.20)}
+.btn-primary:hover{background:#125b94}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:#f2f7fb}
+.btn-outline{background:#fff;color:var(--ink);border-color:#c7d2dd}
+.btn-outline:hover{border-color:#8eabc2;color:var(--blue)}
+.btn-ghost{background:rgba(255,255,255,.05);color:#fff;border-color:rgba(255,255,255,.24)}
+.btn-ghost:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.45)}
+.full{width:100%}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:#071a2e;color:#fff;padding:76px 0 74px}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 15%,rgba(61,135,190,.26),transparent 30%),radial-gradient(circle at 50% 110%,rgba(23,105,170,.22),transparent 40%)}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(90deg,black 0%,rgba(0,0,0,.55) 60%,transparent 100%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(330px,.62fr);gap:70px;align-items:center}
+.hero-kicker{display:inline-flex;align-items:center;gap:9px;color:#9ec9e9;font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;margin-bottom:20px}
+.hero-kicker::before{content:"";width:24px;height:1px;background:#5fa4d4}
+.hero h1{max-width:790px;margin:0;font-size:clamp(44px,6vw,76px);line-height:.96;letter-spacing:-.055em;font-weight:800}
+.hero h1 em{font-style:normal;color:#91c5e9}
+.hero-lead{max-width:670px;margin:24px 0 30px;color:#c4d2df;font-size:16px;line-height:1.7}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px}
+.hero-sign{display:flex;align-items:center;gap:16px;margin-top:35px;color:#8fa2b5;font-size:11px}
+.hero-sign-line{width:34px;height:1px;background:#49677f}
+.hero-brand-card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 30px 80px rgba(0,0,0,.28);color:var(--ink)}
+.hero-brand-card-inner{min-height:320px;border:1px solid #dfe7ed;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;background:linear-gradient(180deg,#fff,#f7fafc)}
+.hero-brand-card img{width:min(190px,62%);height:190px;object-fit:contain;margin-bottom:24px}
+.hero-brand-card strong{font-size:17px;line-height:1.25;max-width:280px}
+.hero-brand-card span{margin-top:8px;color:var(--blue);font-size:9px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.hero-brand-meta{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);margin-top:25px;padding-top:18px;width:100%;gap:16px;text-align:left}
+.hero-brand-meta div+div{border-left:1px solid var(--line);padding-left:16px}
+.hero-brand-meta small{display:block;color:#8b98a6;font-size:8px;text-transform:uppercase;letter-spacing:.1em;font-weight:850;margin-bottom:4px}
+.hero-brand-meta b{font-size:11px;color:var(--ink)}
+
+/* Trust strip */
+.trust{background:#fff;border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-item{padding:24px 26px;border-right:1px solid var(--line)}
+.trust-item:first-child{padding-left:0}
+.trust-item:last-child{border-right:0}
+.trust-item b{display:block;color:var(--ink);font-size:22px;letter-spacing:-.03em}
+.trust-item span{display:block;margin-top:3px;color:var(--muted);font-size:10px}
+
+/* Sections */
+.section{padding:92px 0}
+.section.alt{background:#fff}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:60px;margin-bottom:38px}
+.kicker{margin-bottom:10px;color:var(--blue);font-size:9px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.section h2{margin:0;color:var(--ink);font-size:clamp(34px,4.4vw,52px);line-height:1;letter-spacing:-.05em}
+.section-head > p{max-width:500px;margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+
+/* Catalog cards */
+.catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.program{position:relative;display:flex;flex-direction:column;min-height:250px;padding:26px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;cursor:pointer}
+.program::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.program:hover{transform:translateY(-4px);border-color:#b7c9d8;box-shadow:var(--shadow)}
+.program:hover::before{transform:scaleX(1)}
+.program-num{color:#94a1ae;font-size:9px;font-weight:900;letter-spacing:.12em}
+.program h3{margin:28px 0 10px;color:var(--ink);font-size:21px;line-height:1.12;letter-spacing:-.025em}
+.program p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}
+.program-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:24px}
+.program-link{color:var(--blue);font-size:11px;font-weight:850}
+.program-arrow{width:34px;height:34px;display:grid;place-items:center;border:1px solid #cfdae3;border-radius:50%;color:var(--blue);font-size:18px;transition:.2s}
+.program:hover .program-arrow{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* About */
+.about-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.about-main{background:var(--ink);color:#fff;border-radius:12px;padding:42px}
+.about-main h3{margin:0 0 15px;font-size:32px;line-height:1.05;letter-spacing:-.04em}
+.about-main p{max-width:620px;margin:0;color:#b9c9d8;font-size:13px;line-height:1.75}
+.about-points{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:35px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)}
+.about-point{padding:20px;background:rgba(255,255,255,.025)}
+.about-point b{display:block;font-size:12px;margin-bottom:6px}
+.about-point span{display:block;color:#9fb0c1;font-size:11px;line-height:1.5}
+.about-side{display:grid;gap:16px}
+.feature{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px}
+.feature-num{color:var(--gold);font-size:10px;font-weight:900;letter-spacing:.1em}
+.feature h3{margin:20px 0 7px;color:var(--ink);font-size:17px}
+.feature p{margin:0;color:var(--muted);font-size:11px;line-height:1.6}
+
+/* CTA */
+.cta-wrap{padding-top:20px}
+.cta{position:relative;overflow:hidden;background:linear-gradient(135deg,#e9f3fa,#f8fafb);border:1px solid #d8e5ee;border-radius:14px;padding:52px}
+.cta::after{content:"";position:absolute;width:300px;height:300px;right:-120px;top:-160px;border:1px solid rgba(23,105,170,.12);border-radius:50%;box-shadow:0 0 0 50px rgba(23,105,170,.025),0 0 0 100px rgba(23,105,170,.018)}
+.cta-box{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:35px}
+.cta h2{margin:0;color:var(--ink);font-size:clamp(30px,4vw,44px);line-height:1;letter-spacing:-.045em}
+.cta p{margin:12px 0 0;color:var(--muted);font-size:12px}
+
+/* Footer */
+.footer{background:#061525;color:#8fa1b4;padding:46px 0 34px}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.footer-brand{display:flex;align-items:center;gap:12px;color:#fff}
+.footer-brand img{width:42px;height:42px;object-fit:contain;background:#fff;border-radius:7px;padding:3px}
+.footer-brand strong{font-size:14px}
+.footer-title{margin:28px 0 9px;color:#fff;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.11em}
+.requisites{font-size:11px;line-height:1.8}
+.footer-side{justify-self:end;max-width:420px}
+.footer-side p{margin:0;color:#a7b6c5;font-size:11px;line-height:1.7}
+.footer-bottom{margin-top:35px;padding-top:18px;border-top:1px solid rgba(255,255,255,.09);font-size:9px;color:#66798c;display:flex;justify-content:space-between;gap:20px}
+
+/* Overlays */
+.overlay{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(3,13,24,.82);backdrop-filter:blur(12px)}
+.overlay.show{display:flex}
+.modal{width:min(1080px,100%);max-height:calc(100vh - 44px);overflow:auto;background:#fff;border-radius:14px;box-shadow:0 40px 120px rgba(0,0,0,.42)}
+.modal-small{width:min(520px,100%);padding:36px;position:relative}
+.close{position:absolute;right:18px;top:18px;width:42px;height:42px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:8px;font-size:26px;line-height:1}
+.close:hover{background:var(--blue-soft);color:var(--blue)}
+.modal-head{display:flex;justify-content:space-between;gap:30px;padding:38px 40px 28px;border-bottom:1px solid var(--line)}
+.modal-head h2{margin:0;color:var(--ink);font-size:40px;line-height:1;letter-spacing:-.045em}
+.modal-head p{margin:10px 0 0;color:var(--muted);font-size:12px}
+.demo-note{margin:22px 40px 0;padding:13px 15px;background:#f6f8fa;border-left:3px solid var(--gold);color:var(--muted);font-size:11px;line-height:1.5}
+.demo-note b{margin-right:8px;color:var(--gold);font-size:9px;letter-spacing:.12em}
+.catalog-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding:22px 40px 40px}
+.catalog-card{display:flex;flex-direction:column;padding:24px;border:1px solid var(--line);border-radius:10px;min-height:100%;transition:.2s}
+.catalog-card:hover{border-color:#b9c9d7;box-shadow:0 12px 35px rgba(8,28,49,.07)}
+.catalog-top{display:flex;justify-content:space-between;gap:15px}
+.catalog-type{font-size:9px;font-weight:900;color:var(--blue);letter-spacing:.08em}
+.code{font-size:10px;color:#9aa6b3;font-weight:800}
+.catalog-card h3{margin:19px 0 22px;color:var(--ink);font-size:18px;line-height:1.25}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;margin-bottom:20px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.info{padding:11px 12px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.info span{display:block;margin-bottom:4px;color:#8592a0;font-size:9px}
+.info strong{display:block;color:var(--text);font-size:12px}
+
+/* Course */
+.course-top{padding:30px 40px 34px;background:linear-gradient(135deg,#071a2e,#123b60);color:#fff}
+.course-top .btn-outline{background:transparent;border-color:rgba(255,255,255,.25);color:#fff}
+.course-top .btn-outline:hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.5)}
+.course-top .kicker{margin-top:26px;color:#8fc4e7}
+.course-top h2{max-width:800px;margin:0;color:#fff;font-size:clamp(34px,5vw,56px);line-height:1;letter-spacing:-.05em}
+.course-code{margin-top:13px;color:#aebfd0;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:800}
+.course-body{padding:32px 40px 40px}
+.course-meta{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.course-meta div{padding:17px 18px;border-right:1px solid var(--line)}
+.course-meta div:last-child{border-right:0}
+.course-meta span{display:block;color:#8794a2;font-size:9px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+.course-meta strong{font-size:13px;color:var(--ink)}
+.course-columns{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:34px;margin-top:34px}
+.course-section h3{margin:0 0 10px;color:var(--ink);font-size:19px}
+.course-section h3:not(:first-child){margin-top:30px}
+.course-section p{margin:0;color:var(--muted);font-size:12px;line-height:1.75}
+.points{padding:0;margin:0;list-style:none;display:grid;gap:8px}
+.points li{position:relative;padding-left:22px;color:#526274;font-size:12px}
+.points li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:900}
+.buy{align-self:start;padding:24px;border:1px solid var(--line);border-radius:10px;background:#f8fafb;position:sticky;top:10px}
+.buy .price{margin:9px 0 3px;color:var(--ink);font-size:34px;font-weight:900;letter-spacing:-.04em}
+.price-note{margin-bottom:18px;color:#8794a2;font-size:9px}
+.buy .btn{margin-top:9px}
+
+/* Form */
+.form h2{font-size:32px}
+.form > p,.modal-small > p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}
+.form-fields{display:grid;gap:10px;margin-top:18px}
+.form input{width:100%;height:50px;border:1px solid var(--line);border-radius:7px;padding:0 14px;color:var(--text);outline:0;background:#fff}
+.form input:focus{border-color:#7ca9c8;box-shadow:0 0 0 3px rgba(23,105,170,.08)}
+.form-note{margin-top:9px;color:#8b97a4;font-size:9px;line-height:1.5}
+
+/* Cabinet */
+.cabinet-shell{width:min(1120px,100%);max-height:calc(100vh - 44px);overflow:auto;background:#f4f7f9;border-radius:14px;box-shadow:0 40px 120px rgba(0,0,0,.42)}
+.cabinet-header{min-height:74px;padding:0 24px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.cabinet-user{display:flex;align-items:center;gap:12px}
+.avatar{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:var(--ink);color:#fff;font-size:13px;font-weight:900}
+.cabinet-user strong{display:block;color:var(--ink);font-size:13px}
+.cabinet-user span{display:block;color:#8a97a5;font-size:9px;margin-top:2px}
+.cabinet-layout{display:grid;grid-template-columns:205px 1fr;min-height:590px}
+.cabinet-nav{padding:20px 12px;background:#0b2036}
+.cabinet-nav button{display:block;width:100%;padding:12px 13px;margin-bottom:5px;border:0;border-radius:7px;background:transparent;color:#9db0c2;text-align:left;font-size:11px;font-weight:800}
+.cabinet-nav button:hover,.cabinet-nav button.active{background:rgba(255,255,255,.08);color:#fff}
+.cabinet-main{padding:38px}
+.cabinet-main h2{margin:0;color:var(--ink);font-size:32px;letter-spacing:-.04em}
+.cabinet-main > p{margin:7px 0 25px;color:var(--muted);font-size:11px}
+.cabinet-course-card,.cabinet-panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:25px}
+.cabinet-course-card .top{display:flex;justify-content:space-between;gap:20px}
+.cabinet-course-card h3{max-width:650px;margin:7px 0 0;color:var(--ink);font-size:18px;line-height:1.3}
+.status{align-self:start;padding:7px 9px;background:#e9f6ef;color:var(--green);font-size:9px;font-weight:900;border-radius:5px;white-space:nowrap}
+.progress{height:8px;background:#e8edf1;border-radius:20px;margin-top:26px;overflow:hidden}.progress i{display:block;width:38%;height:100%;background:var(--blue);border-radius:20px}
+.progress-row{display:flex;justify-content:space-between;margin-top:7px;color:#8996a3;font-size:9px}.progress-row strong{color:var(--ink)}
+.cabinet-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.tile{padding:19px;background:#fff;border:1px solid var(--line);border-radius:10px}.tile b{display:block;color:var(--ink);font-size:22px}.tile span{display:block;color:#8a97a4;font-size:9px;margin-top:2px}
+.document-row{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:11px}.document-row:last-child{border-bottom:0}.document-row strong{color:var(--ink)}.document-row span{color:var(--muted);text-align:right}
+.lesson-list{list-style:none;padding:0;margin:20px 0 0;border-top:1px solid var(--line)}
+.lesson{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);cursor:pointer}.lesson:hover b{color:var(--blue)}.lesson b{font-size:11px;color:var(--ink)}.lesson span{font-size:9px;color:var(--blue);font-weight:800}
+.material{display:none;margin-top:18px;padding:20px;background:var(--blue-soft);border-radius:8px}.material.show{display:block}.material h4{margin:0 0 7px;color:var(--ink);font-size:13px}.material p{margin:0;color:var(--muted);font-size:11px;line-height:1.6}
+
+/* Responsive */
+@media(max-width:1080px){
+  .nav{gap:18px}.brand{min-width:250px}.navlinks{gap:17px}.contacts{display:none}
+  .hero-grid{grid-template-columns:1fr 350px;gap:40px}.hero h1{font-size:clamp(42px,6vw,64px)}
+  .catalog-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:820px){
+  .container{width:min(100% - 32px,680px)}
+  .utility{height:auto;min-height:32px}.utility-right{display:none}
+  .nav{min-height:68px}.brand{min-width:0}.brand-copy span{display:none}.brand img{width:40px;height:40px}
+  .navlinks,.header-right .btn{display:none}.menu{display:block;margin-left:auto}
+  .hero{padding:58px 0 52px}.hero-grid{grid-template-columns:1fr;gap:34px}.hero h1{font-size:clamp(42px,11vw,62px)}.hero-lead{font-size:14px}.hero-brand-card{max-width:460px}
+  .trust-grid{grid-template-columns:1fr 1fr}.trust-item{padding:19px 15px}.trust-item:first-child{padding-left:15px}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .section{padding:68px 0}.section-head{display:block;margin-bottom:28px}.section-head > p{margin-top:14px}
+  .catalog-grid{grid-template-columns:1fr}.program{min-height:215px}
+  .about-layout{grid-template-columns:1fr}.about-main{padding:30px}.about-points{grid-template-columns:1fr}
+  .cta{padding:32px}.cta-box{display:block}.cta .btn{margin-top:22px;width:100%}
+  .footer-grid{grid-template-columns:1fr}.footer-side{justify-self:start}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:6px}
+  .catalog-list{grid-template-columns:1fr;padding:18px 22px 28px}.modal-head{padding:28px 22px 22px}.modal-head h2{font-size:32px}.demo-note{margin:18px 22px 0}
+  .course-top{padding:25px 22px 30px}.course-body{padding:24px 22px 30px}.course-meta{grid-template-columns:1fr 1fr}.course-meta div:nth-child(2){border-right:0}.course-meta div:nth-child(-n+2){border-bottom:1px solid var(--line)}.course-columns{grid-template-columns:1fr}.buy{position:static}
+  .cabinet-layout{grid-template-columns:1fr}.cabinet-nav{display:flex;gap:5px;padding:10px;overflow:auto}.cabinet-nav button{min-width:max-content;margin:0}.cabinet-main{padding:24px}.cabinet-tiles{grid-template-columns:1fr 1fr 1fr}
+}
+@media(max-width:520px){
+  .container{width:calc(100% - 24px)}
+  .utility .container{font-size:8px}
+  .brand-copy strong{font-size:11px}.brand img{width:36px;height:36px}
+  .hero{padding:44px 0}.hero-kicker{font-size:8px}.hero h1{font-size:42px}.hero-lead{font-size:13px;line-height:1.6}.hero-actions{display:grid;grid-template-columns:1fr}.hero-actions .btn{width:100%}.hero-sign{margin-top:24px}
+  .hero-brand-card{padding:10px}.hero-brand-card-inner{min-height:290px;padding:22px}.hero-brand-card img{width:145px;height:145px;margin-bottom:18px}.hero-brand-card strong{font-size:15px}.hero-brand-meta{margin-top:18px}
+  .trust-item b{font-size:18px}.trust-item span{font-size:9px}
+  .section{padding:55px 0}.section h2{font-size:35px}.program{padding:22px}.program h3{font-size:19px}
+  .about-main h3{font-size:26px}.about-main{padding:25px}.feature{padding:22px}
+  .cta{padding:26px 22px}
+  .modal{max-height:calc(100vh - 20px);border-radius:11px}.overlay{padding:10px}.modal-small{padding:28px 20px}.close{right:12px;top:12px}
+  .modal-head h2{font-size:28px}.catalog-card{padding:20px}.course-top h2{font-size:35px}.course-meta{grid-template-columns:1fr}.course-meta div{border-right:0;border-bottom:1px solid var(--line)!important}.course-meta div:last-child{border-bottom:0!important}.course-body{padding:20px}.buy{padding:20px}
+  .cabinet-shell{max-height:calc(100vh - 20px)}.cabinet-header{padding:0 14px}.cabinet-main{padding:20px 14px}.cabinet-main h2{font-size:27px}.cabinet-course-card{padding:19px}.cabinet-course-card .top{display:block}.status{display:inline-block;margin-top:14px}.cabinet-tiles{grid-template-columns:1fr}.document-row{display:block}.document-row span{display:block;text-align:left;margin-top:4px}.lesson{display:block}.lesson span{display:block;margin-top:5px}
+}
 </style>
 </head>
 <body>
-<div class="topline"><div class="container"><span>ФЦСП «ФЕНИКС»</span><span>Федеральный Центр Специальной Подготовки</span></div></div>
-<header class="header"><div class="container nav">
-<a class="brand" href="#top"><img class="brand-mark" src="logo.png" alt="ФЦСП «ФЕНИКС»"><div class="brand-text"><strong>ФЦСП «ФЕНИКС»</strong><span>Подготовка специалистов</span></div></a>
-<nav class="navlinks"><a href="#catalog">Каталог</a><a href="#about">О компании</a><a href="#contacts">Контакты</a></nav>
-<div class="header-actions"><div class="header-contacts"><div class="header-contact"><span>Телефон</span><strong><a href="tel:88000000000">8 800 000-00-00</a></strong></div><div class="header-contact"><span>E-mail</span><strong><a href="mailto:info@fcsp-phoenix.example">info@fcsp-phoenix.example</a></strong></div></div><button class="btn btn-outline cabinet-btn" id="loginBtn" type="button">Войти в кабинет</button></div>
-</div></header>
+<div class="utility"><div class="container"><span>ФЦСП «ФЕНИКС»</span><div class="utility-right"><span>Федеральный Центр Специальной Подготовки</span><span>Дистанционное обучение</span></div></div></div>
+
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="ФЦСП «ФЕНИКС»">
+      <img src="logo.png" alt="ФЦСП «ФЕНИКС»">
+      <div class="brand-copy"><strong>ФЦСП «ФЕНИКС»</strong><span>Федеральный Центр Специальной Подготовки</span></div>
+    </a>
+    <nav class="navlinks" aria-label="Основная навигация">
+      <a href="#catalog">Каталог</a><a href="#about">О центре</a><a href="#contacts">Контакты</a>
+    </nav>
+    <div class="header-right">
+      <div class="contacts">
+        <div class="contact"><small>Телефон</small><a href="tel:88000000000">8 800 000-00-00</a></div>
+        <div class="contact"><small>E-mail</small><a href="mailto:info@fcsp-phoenix.example">info@fcsp-phoenix.example</a></div>
+      </div>
+      <button class="btn btn-outline" id="loginBtn" type="button">Войти в кабинет</button>
+      <button class="menu" id="menuBtn" type="button" aria-label="Меню">☰</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#catalog">Каталог</a><a href="#about">О центре</a><a href="#contacts">Контакты</a>
+    <a href="tel:88000000000">8 800 000-00-00</a><a href="mailto:info@fcsp-phoenix.example">info@fcsp-phoenix.example</a>
+    <button class="btn btn-primary full" id="mobileLogin" type="button">Войти в кабинет</button>
+  </div>
+</header>
+
 <main id="top">
-<section class="hero"><div class="container hero-grid"><div><div class="hero-logo"><img src="logo.png" alt="ФЦСП «ФЕНИКС»"><div><strong>Федеральный Центр Специальной Подготовки</strong><span>ФЦСП «ФЕНИКС»</span></div></div><div class="eyebrow">Федеральный Центр Специальной Подготовки</div><h1>Профессиональная подготовка<br><span>специалистов.</span></h1><p>Обучение, переподготовка и повышение квалификации по специальным направлениям. Выберите программу, оформите обучение и продолжите его в личном кабинете.</p><div class="hero-actions"><a class="btn btn-primary" href="#catalog">Смотреть каталог</a><button class="btn btn-outline" type="button" id="heroLogin">Войти в кабинет</button></div></div><div class="hero-card"><div class="big">01</div><p>Всё обучение — в одном цифровом контуре</p><div class="hero-list"><div>Выбор программы</div><div>Оформление обучения</div><div>Обучение в личном кабинете</div><div>Документы и результаты</div></div></div></div></section>
-<section class="stats"><div class="container stats-grid"><div class="stat"><strong>9+</strong><span>основных направлений</span></div><div class="stat"><strong>онлайн</strong><span>формат обучения</span></div><div class="stat"><strong>24/7</strong><span>доступ к личному кабинету</span></div><div class="stat"><strong>1 кабинет</strong><span>курсы и документы</span></div></div></section>
-<section class="section" id="catalog"><div class="container"><div class="section-head"><div><div class="kicker">01 / КАТАЛОГ</div><h2>Выберите направление<br>обучения</h2></div><p>Демонстрационный каталог для презентации концепции. Внутри направления можно открыть конкретный курс, посмотреть его карточку и перейти к обучению.</p></div><div class="programs">
-<div class="program" data-direction="fire"><div class="program-number">01 / БЕЗОПАСНОСТЬ</div><h3>Пожарная безопасность</h3><p>Программы для руководителей, ответственных лиц, специалистов и работников.</p><div class="program-arrow">→</div></div>
-<div class="program" data-direction="labor"><div class="program-number">02 / БЕЗОПАСНОСТЬ</div><h3>Охрана труда</h3><p>Демонстрационный набор программ по охране труда.</p><div class="program-arrow">→</div></div>
-<div class="program" data-direction="industrial"><div class="program-number">03 / ПРОМЫШЛЕННОСТЬ</div><h3>Промышленная безопасность</h3><p>Подготовка специалистов и руководителей.</p><div class="program-arrow">→</div></div>
-<div class="program" data-direction="electro"><div class="program-number">04 / ЭЛЕКТРОБЕЗОПАСНОСТЬ</div><h3>Электробезопасность</h3><p>Демонстрационные программы для электротехнического персонала.</p><div class="program-arrow">→</div></div>
-<div class="program" data-direction="retraining"><div class="program-number">05 / КВАЛИФИКАЦИЯ</div><h3>Профессиональная переподготовка</h3><p>Получение новой квалификации по выбранному направлению.</p><div class="program-arrow">→</div></div>
-<div class="program" data-direction="other"><div class="program-number">06 / ДРУГИЕ</div><h3>Другие направления</h3><p>В прототипе направление можно расширить отдельными каталогами.</p><div class="program-arrow">→</div></div>
-</div></div></section>
-<section class="section" id="about"><div class="container"><div class="section-head"><div><div class="kicker">02 / О КОМПАНИИ</div><h2>Центр подготовки<br>специалистов</h2></div><p>Концепция публичной части: быстро объяснить, что предлагает центр, дать выбрать программу и перевести слушателя в цифровой сценарий обучения.</p></div><div class="directions"><div class="direction"><strong>Подбор программы</strong><span>Пользователь начинает с понятного каталога, а не с длинной формы заявки.</span></div><div class="direction"><strong>Личный кабинет</strong><span>После записи слушатель получает единое место для курсов, материалов и документов.</span></div><div class="direction"><strong>Прозрачный путь</strong><span>Выбор курса → доступ → уроки → прогресс → итоговый документ.</span></div></div></div></section>
-<section class="section" id="contacts"><div class="container"><div class="cta"><div class="cta-box"><div><h2>Нужна помощь<br>с выбором курса?</h2><p>В прототипе кнопка открывает демонстрационную форму консультации.</p></div><button class="btn btn-primary" id="consultBtn" type="button">Получить консультацию</button></div></div></div></section>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-kicker">Федеральный Центр Специальной Подготовки</div>
+      <h1>Профессиональная подготовка <em>специалистов.</em></h1>
+      <p class="hero-lead">Программы обучения, переподготовки и повышения квалификации. Выберите направление, откройте программу и продолжите обучение в личном кабинете.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#catalog">Смотреть программы</a><button class="btn btn-ghost" id="heroLogin" type="button">Войти в кабинет</button></div>
+      <div class="hero-sign"><span class="hero-sign-line"></span><span>ФЦСП «ФЕНИКС» · концепт цифровой образовательной платформы</span></div>
+    </div>
+    <div class="hero-brand-card">
+      <div class="hero-brand-card-inner">
+        <img src="logo.png" alt="ФЦСП «ФЕНИКС»">
+        <strong>Федеральный Центр Специальной Подготовки</strong>
+        <span>ФЦСП «ФЕНИКС»</span>
+        <div class="hero-brand-meta"><div><small>Формат</small><b>Онлайн</b></div><div><small>Сценарий</small><b>Курс → кабинет</b></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust"><div class="container trust-grid">
+  <div class="trust-item"><b>9+</b><span>направлений подготовки</span></div>
+  <div class="trust-item"><b>Онлайн</b><span>обучение в личном кабинете</span></div>
+  <div class="trust-item"><b>24/7</b><span>доступ к материалам</span></div>
+  <div class="trust-item"><b>1 кабинет</b><span>курсы, прогресс и документы</span></div>
+</div></section>
+
+<section class="section" id="catalog">
+  <div class="container">
+    <div class="section-head"><div><div class="kicker">01 / КАТАЛОГ</div><h2>Выберите<br>направление</h2></div><p>Каталог построен вокруг задачи слушателя: сначала выбрать направление, затем открыть конкретную программу и посмотреть условия обучения.</p></div>
+    <div class="catalog-grid">
+      <div class="program" data-direction="fire"><div class="program-num">01 / БЕЗОПАСНОСТЬ</div><h3>Пожарная безопасность</h3><p>Программы для руководителей, ответственных лиц, специалистов и работников.</p><div class="program-bottom"><span class="program-link">Смотреть программы</span><span class="program-arrow">→</span></div></div>
+      <div class="program" data-direction="labor"><div class="program-num">02 / БЕЗОПАСНОСТЬ</div><h3>Охрана труда</h3><p>Подготовка руководителей и специалистов по направлениям охраны труда.</p><div class="program-bottom"><span class="program-link">Смотреть программы</span><span class="program-arrow">→</span></div></div>
+      <div class="program" data-direction="industrial"><div class="program-num">03 / ПРОМЫШЛЕННОСТЬ</div><h3>Промышленная безопасность</h3><p>Демонстрационный набор программ для специалистов и руководителей.</p><div class="program-bottom"><span class="program-link">Смотреть программы</span><span class="program-arrow">→</span></div></div>
+      <div class="program" data-direction="electro"><div class="program-num">04 / ЭЛЕКТРОБЕЗОПАСНОСТЬ</div><h3>Электробезопасность</h3><p>Программы подготовки электротехнического и электротехнологического персонала.</p><div class="program-bottom"><span class="program-link">Смотреть программы</span><span class="program-arrow">→</span></div></div>
+      <div class="program" data-direction="retraining"><div class="program-num">05 / КВАЛИФИКАЦИЯ</div><h3>Профессиональная переподготовка</h3><p>Получение новой квалификации по выбранной профессиональной области.</p><div class="program-bottom"><span class="program-link">Смотреть программы</span><span class="program-arrow">→</span></div></div>
+      <div class="program" data-direction="other"><div class="program-num">06 / ДРУГИЕ НАПРАВЛЕНИЯ</div><h3>Другие направления</h3><p>Дополнительные программы, которые можно расширять в реальном каталоге.</p><div class="program-bottom"><span class="program-link">Смотреть программы</span><span class="program-arrow">→</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="about">
+  <div class="container">
+    <div class="section-head"><div><div class="kicker">02 / О ЦЕНТРЕ</div><h2>От выбора программы<br>до результата.</h2></div><p>Публичная часть и личный кабинет работают как единый сценарий: слушатель не теряется между каталогом, обучением и документами.</p></div>
+    <div class="about-layout">
+      <div class="about-main"><h3>Один понятный путь для слушателя.</h3><p>Выбор программы → оформление обучения → доступ в личный кабинет → материалы и уроки → прогресс → итоговые документы.</p><div class="about-points"><div class="about-point"><b>01 / Каталог</b><span>Понятная структура направлений и программ без перегруженной навигации.</span></div><div class="about-point"><b>02 / Курс</b><span>Карточка сразу отвечает на главные вопросы перед записью.</span></div><div class="about-point"><b>03 / Кабинет</b><span>Текущий курс и следующий шаг всегда находятся на первом экране.</span></div><div class="about-point"><b>04 / Документы</b><span>Отдельный раздел для договоров и итоговых документов.</span></div></div></div>
+      <div class="about-side"><div class="feature"><div class="feature-num">01</div><h3>Курс не прячется за формой заявки</h3><p>Пользователь сначала понимает содержание программы, формат, срок и стоимость, а уже затем принимает решение.</p></div><div class="feature"><div class="feature-num">02</div><h3>Личный кабинет отвечает на вопрос «что дальше?»</h3><p>Ключевой экран показывает текущий курс, прогресс и действие, с которого нужно продолжить обучение.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacts"><div class="container cta-wrap"><div class="cta"><div class="cta-box"><div><div class="kicker">03 / КОНТАКТЫ</div><h2>Не знаете, какую программу выбрать?</h2><p>Оставьте запрос — в реальной версии специалист центра поможет подобрать программу.</p></div><button class="btn btn-primary" id="consultBtn" type="button">Получить консультацию</button></div></div></div></section>
 </main>
-<footer class="footer"><div class="container footer-grid"><div><strong>ФЦСП «ФЕНИКС»</strong><div>Федеральный Центр Специальной Подготовки</div><div class="requisites">ООО «ФЦСП «ФЕНИКС»»<br>ИНН: 0000000000 · КПП: 000000000<br>ОГРН: 0000000000000<br>Тел.: 8 800 000-00-00<br>E-mail: info@fcsp-phoenix.example</div></div><div>Демонстрационный прототип<br><span style="font-size:11px;opacity:.65">Реквизиты и контакты указаны для презентации и требуют замены на реальные.</span></div></div></footer>
 
-<!-- Каталог направления -->
-<div class="overlay" id="catalogOverlay"><div class="modal"><div class="modal-head"><div><div class="kicker">КАТАЛОГ КУРСОВ</div><h2 id="catalogTitle">Пожарная безопасность</h2><p id="catalogSubtitle">Выберите конкретную программу.</p></div><button class="close" data-close="catalog" type="button">×</button></div><div class="demo-note"><b>ДЕМО</b>Названия, сроки и стоимость используются только для презентации концепции.</div><div class="catalog-list" id="catalogList"></div></div></div>
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div><div class="footer-brand"><img src="logo.png" alt="ФЦСП «ФЕНИКС»"><strong>ФЦСП «ФЕНИКС»</strong></div><div class="footer-title">Реквизиты</div><div class="requisites">ООО «ФЦСП «ФЕНИКС»»<br>ИНН: 0000000000 · КПП: 000000000<br>ОГРН: 0000000000000<br>8 800 000-00-00<br>info@fcsp-phoenix.example</div></div>
+    <div class="footer-side"><div class="footer-title">Федеральный Центр Специальной Подготовки</div><p>Демонстрационный прототип. Реквизиты, контакты, программы и стоимость являются тестовыми данными и должны быть заменены на реальные перед публикацией.</p></div>
+  </div>
+  <div class="footer-bottom"><span>© ФЦСП «ФЕНИКС»</span><span>Демонстрационная версия</span></div>
+</div></footer>
 
-<!-- Карточка курса -->
-<div class="overlay" id="courseOverlay"><div class="modal"><div class="course-top"><button class="btn btn-outline" id="courseBack" type="button">← Назад к каталогу</button><div class="kicker" style="margin-top:25px">КАРТОЧКА КУРСА</div><h2 id="courseTitle"></h2><div class="course-code" id="courseCode"></div></div><div class="course-body"><div class="course-meta"><div><span>Срок обучения</span><strong id="courseHours"></strong></div><div><span>Форма</span><strong>Дистанционно</strong></div><div><span>Итоговый документ</span><strong id="courseDoc"></strong></div><div><span>Стоимость</span><strong id="coursePrice"></strong></div></div><div class="course-columns"><div class="course-section"><h3>О программе</h3><p id="courseDesc"></p><h3>Что входит</h3><ul class="points"><li>Доступ к учебным материалам</li><li>Личный кабинет слушателя</li><li>Структурированная программа курса</li><li>Отображение прогресса обучения</li></ul><h3>После обучения</h3><p>В демонстрационной версии итоговый документ отображается в разделе «Документы» личного кабинета.</p></div><aside class="buy"><div class="kicker">ЗАПИСЬ НА КУРС</div><div class="price" id="coursePrice2"></div><div class="price-note">Демонстрационная стоимость</div><button class="btn btn-primary full" id="enrollBtn" type="button">Записаться на обучение</button><button class="btn btn-outline full" id="courseLoginBtn" type="button">Войти в кабинет</button></aside></div></div></div></div>
+<!-- Catalog -->
+<div class="overlay" id="catalogOverlay"><div class="modal"><div class="modal-head"><div><div class="kicker">КАТАЛОГ КУРСОВ</div><h2 id="catalogTitle">Пожарная безопасность</h2><p id="catalogSubtitle">Выберите конкретную программу.</p></div><button class="close" data-close="catalog" type="button">×</button></div><div class="demo-note"><b>ДЕМО</b> Названия, сроки и стоимость используются для презентации концепции.</div><div class="catalog-list" id="catalogList"></div></div></div>
 
-<!-- Форма записи -->
-<div class="overlay" id="orderOverlay"><div class="modal modal-small"><button class="close" data-close="order" type="button">×</button><div class="kicker">ЗАЯВКА</div><h2 class="form h2" style="font-size:31px;color:var(--navy);margin:0 0 8px">Записаться на обучение</h2><p>В прототипе после отправки заявки сразу показываем следующий сценарий — оплату и доступ в кабинет.</p><div class="demo-note" style="margin:16px 0"><b>ДЕМО</b><span id="selectedProgram"></span></div><form id="orderForm" class="form"><input name="name" placeholder="Ваше имя" required><input name="phone" placeholder="Телефон" required><input name="email" type="email" placeholder="E-mail"><button class="btn btn-primary full" type="submit">Продолжить</button><div class="form-note">Это демонстрационная форма. Данные никуда не отправляются.</div></form></div></div>
+<!-- Course -->
+<div class="overlay" id="courseOverlay"><div class="modal"><div class="course-top"><button class="btn btn-outline" id="courseBack" type="button">← Назад к каталогу</button><div class="kicker">КАРТОЧКА КУРСА</div><h2 id="courseTitle"></h2><div class="course-code" id="courseCode"></div></div><div class="course-body"><div class="course-meta"><div><span>Срок обучения</span><strong id="courseHours"></strong></div><div><span>Форма</span><strong>Дистанционно</strong></div><div><span>Итоговый документ</span><strong id="courseDoc"></strong></div><div><span>Стоимость</span><strong id="coursePrice"></strong></div></div><div class="course-columns"><div class="course-section"><h3>О программе</h3><p id="courseDesc"></p><h3>Что входит</h3><ul class="points"><li>Доступ к учебным материалам</li><li>Личный кабинет слушателя</li><li>Структурированная программа курса</li><li>Отображение прогресса обучения</li></ul><h3>После обучения</h3><p>В демонстрационной версии итоговый документ отображается в разделе «Документы» личного кабинета.</p></div><aside class="buy"><div class="kicker">ЗАПИСЬ НА КУРС</div><div class="price" id="coursePrice2"></div><div class="price-note">Демонстрационная стоимость</div><button class="btn btn-primary full" id="enrollBtn" type="button">Записаться на обучение</button><button class="btn btn-outline full" id="courseLoginBtn" type="button">Войти в кабинет</button></aside></div></div></div></div>
 
-<!-- Оплата -->
-<div class="overlay" id="paymentOverlay"><div class="modal modal-small"><button class="close" data-close="payment" type="button">×</button><div class="kicker">ОПЛАТА</div><h2 style="font-size:31px;color:var(--navy);margin:0 0 8px">Подтверждение заказа</h2><p style="color:var(--muted);font-size:13px">Следующий шаг интерфейса — имитация оплаты курса.</p><div class="demo-note" style="margin:18px 0"><b>ДЕМО</b><span id="paymentProgram"></span></div><button class="btn btn-primary full" id="payBtn" type="button">Оплатить и получить доступ</button></div></div>
+<!-- Order -->
+<div class="overlay" id="orderOverlay"><div class="modal modal-small"><button class="close" data-close="order" type="button">×</button><div class="kicker">ЗАЯВКА</div><h2 style="font-size:32px;color:var(--ink);margin:0 0 8px">Записаться на обучение</h2><p>В прототипе после отправки заявки открывается следующий демонстрационный шаг — подтверждение оплаты и доступ в кабинет.</p><div class="demo-note" style="margin:18px 0"><b>ДЕМО</b><span id="selectedProgram"></span></div><form id="orderForm" class="form"><div class="form-fields"><input name="name" placeholder="Ваше имя" required><input name="phone" placeholder="Телефон" required><input name="email" type="email" placeholder="E-mail"></div><button class="btn btn-primary full" style="margin-top:12px" type="submit">Продолжить</button><div class="form-note">Данные никуда не отправляются — это демонстрационный прототип.</div></form></div></div>
 
-<!-- Личный кабинет -->
-<div class="overlay" id="cabinetOverlay"><div class="cabinet-shell" id="cabinetShell">
-<div class="cabinet-header"><div class="cabinet-user"><div class="avatar">Ф</div><div><strong>Личный кабинет</strong><span>Тестовый слушатель · Демо-режим</span></div></div><button class="close" style="position:static" data-close="cabinet" type="button">×</button></div>
-<div class="cabinet-layout"><nav class="cabinet-nav"><button class="active" data-tab="courses">Мои курсы</button><button data-tab="documents">Документы</button><button data-tab="profile">Профиль</button></nav><div class="cabinet-main" id="cabinetMain"></div></div>
-</div></div>
+<!-- Payment -->
+<div class="overlay" id="paymentOverlay"><div class="modal modal-small"><button class="close" data-close="payment" type="button">×</button><div class="kicker">ОПЛАТА</div><h2 style="font-size:32px;color:var(--ink);margin:0 0 8px">Подтверждение заказа</h2><p>Здесь в реальной системе появится платёжный сценарий.</p><div class="demo-note" style="margin:18px 0"><b>ДЕМО</b><span id="paymentProgram"></span></div><button class="btn btn-primary full" id="payBtn" type="button">Оплатить и получить доступ</button></div></div>
+
+<!-- Cabinet -->
+<div class="overlay" id="cabinetOverlay"><div class="cabinet-shell"><div class="cabinet-header"><div class="cabinet-user"><div class="avatar">Ф</div><div><strong>Личный кабинет</strong><span>Тестовый слушатель · Демо-режим</span></div></div><button class="close" style="position:static" data-close="cabinet" type="button">×</button></div><div class="cabinet-layout"><nav class="cabinet-nav"><button class="active" data-tab="courses">Мои курсы</button><button data-tab="documents">Документы</button><button data-tab="profile">Профиль</button></nav><div class="cabinet-main" id="cabinetMain"></div></div></div></div>
 
 <script>
-(function(){
-'use strict';
-const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
-const overlays={catalog:$('#catalogOverlay'),course:$('#courseOverlay'),order:$('#orderOverlay'),payment:$('#paymentOverlay'),cabinet:$('#cabinetOverlay')};
-const courses={
- pb01:{title:'Пожарная безопасность для руководителей и ответственных лиц',type:'ПОВЫШЕНИЕ КВАЛИФИКАЦИИ',code:'ПБ-01',hours:'16 часов',doc:'Удостоверение',price:'4 900 ₽',desc:'Демонстрационная программа для руководителей и работников, на которых возложены обязанности по обеспечению пожарной безопасности.'},
- pb02:{title:'Обучение мерам пожарной безопасности',type:'ОБУЧЕНИЕ',code:'ПБ-02',hours:'40 часов',doc:'Удостоверение',price:'6 900 ₽',desc:'Демонстрационная программа обучения мерам пожарной безопасности с доступом к материалам в личном кабинете.'},
- pb03:{title:'Пожарно-техническая подготовка работников',type:'ПОВЫШЕНИЕ КВАЛИФИКАЦИИ',code:'ПБ-03',hours:'72 часа',doc:'Удостоверение',price:'8 900 ₽',desc:'Демонстрационная программа системной подготовки работников по пожарно-техническому направлению.'},
- pb04:{title:'Специалист по пожарной безопасности',type:'ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА',code:'ПБ-04',hours:'256 часов',doc:'Диплом о ПП',price:'19 900 ₽',desc:'Демонстрационная программа профессиональной переподготовки с итоговым документом о квалификации.'},
- labor01:{title:'Охрана труда для руководителей и специалистов',type:'ПОВЫШЕНИЕ КВАЛИФИКАЦИИ',code:'ОТ-01',hours:'16 часов',doc:'Удостоверение',price:'4 900 ₽',desc:'Демонстрационная программа по охране труда для руководителей и специалистов.'},
- industrial01:{title:'Промышленная безопасность: базовая подготовка',type:'ОБУЧЕНИЕ',code:'ПБР-01',hours:'24 часа',doc:'Удостоверение',price:'7 900 ₽',desc:'Демонстрационная программа для специалистов по промышленной безопасности.'},
- electro01:{title:'Электробезопасность для работников',type:'ОБУЧЕНИЕ',code:'ЭБ-01',hours:'16 часов',doc:'Удостоверение',price:'4 500 ₽',desc:'Демонстрационная программа подготовки электротехнического персонала.'},
- retrain01:{title:'Специалист по охране труда',type:'ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА',code:'ПП-01',hours:'256 часов',doc:'Диплом о ПП',price:'21 900 ₽',desc:'Демонстрационная программа профессиональной переподготовки.'}
-};
-const directions={
- fire:['Пожарная безопасность',['pb01','pb02','pb03','pb04']],
- labor:['Охрана труда',['labor01']],
- industrial:['Промышленная безопасность',['industrial01']],
- electro:['Электробезопасность',['electro01']],
- retraining:['Профессиональная переподготовка',['retrain01']],
- other:['Другие направления',['pb01']]
-};
-let current=null;
-function lock(){document.body.classList.add('lock')} function unlock(){document.body.classList.remove('lock')}
-function show(name){overlays[name].classList.add('show');lock()} function hide(name){overlays[name].classList.remove('show');if(!Object.values(overlays).some(x=>x.classList.contains('show')))unlock()}
-function renderCatalog(dir){
- const d=directions[dir]||directions.fire; $('#catalogTitle').textContent=d[0]; $('#catalogSubtitle').textContent='Выберите конкретную программу обучения.';
- $('#catalogList').innerHTML=d[1].map(id=>{const c=courses[id];return `<div class="catalog-card"><div class="catalog-top"><span class="catalog-type">${c.type}</span><span class="code">${c.code}</span></div><h3>${c.title}</h3><div class="info-grid"><div class="info"><span>Срок</span><strong>${c.hours}</strong></div><div class="info"><span>Форма</span><strong>Дистанционно</strong></div><div class="info"><span>Стоимость</span><strong>${c.price}</strong></div><div class="info"><span>Документ</span><strong>${c.doc}</strong></div></div><button class="btn btn-primary full catalog-course" data-id="${id}" type="button">Открыть курс →</button></div>`}).join('');
- show('catalog');
-}
-function renderCourse(id){
- current=courses[id]; if(!current)return; $('#courseTitle').textContent=current.title;$('#courseCode').textContent=current.code+' · '+current.type;$('#courseHours').textContent=current.hours;$('#courseDoc').textContent=current.doc;$('#coursePrice').textContent=current.price;$('#coursePrice2').textContent=current.price;$('#courseDesc').textContent=current.desc;hide('catalog');show('course');
-}
-function renderCabinet(tab='courses'){
- const main=$('#cabinetMain'); $$('.cabinet-nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
- if(tab==='courses') main.innerHTML=`<h2>Мои курсы</h2><p>Здесь слушатель видит доступное обучение и продолжает занятия.</p><div class="cabinet-course-card"><div class="top"><div><div class="kicker">ТЕКУЩЕЕ ОБУЧЕНИЕ</div><h3>${current?current.title:'Пожарная безопасность для руководителей и ответственных лиц'}</h3></div><span class="status">В процессе</span></div><div class="progress"><i></i></div><div class="progress-row"><span>Прогресс обучения</span><strong>38%</strong></div><button class="btn btn-primary" id="openLessons" style="margin-top:18px">Продолжить обучение →</button></div><div class="cabinet-tiles"><div class="tile"><b>1</b><span>Курс в обучении</span></div><div class="tile"><b>38%</b><span>Прогресс курса</span></div><div class="tile"><b>0</b><span>Документов доступно</span></div></div>`;
- if(tab==='documents') main.innerHTML=`<h2>Документы</h2><p>Итоговые документы слушателя.</p><div class="cabinet-panel"><div class="document-row"><strong>Удостоверение о повышении квалификации</strong><span>Будет доступно после обучения</span></div><div class="document-row"><strong>Договор на обучение</strong><span>Демонстрационный документ</span></div></div>`;
- if(tab==='profile') main.innerHTML=`<h2>Профиль</h2><p>Данные тестового пользователя.</p><div class="cabinet-panel"><h3>Тестовый слушатель</h3><div class="document-row"><strong>Имя</strong><span>Иван Петров</span></div><div class="document-row"><strong>E-mail</strong><span>demo@fcsp-phoenix.example</span></div><div class="document-row"><strong>Телефон</strong><span>8 800 000-00-00</span></div></div>`;
- if(tab==='lessons') main.innerHTML=`<h2>Обучение</h2><p>Курс разбит на модули и уроки. В прототипе материалы открываются по клику.</p><div class="cabinet-panel"><h3>${current?current.title:'Пожарная безопасность'}</h3><ul class="lesson-list">${['Введение в курс','Основные требования','Организация работы','Практический модуль','Итоговый материал'].map((x,i)=>`<li class="lesson" data-lesson="${i}"><b>${String(i+1).padStart(2,'0')} · ${x}</b><span>${i<2?'Пройдено':'Открыть урок →'}</span></li>`).join('')}</ul><div class="material" id="material"><h4 id="materialTitle">Материал урока</h4><p>Здесь в реальном кабинете открывается учебный материал: текст, видео, файл или другой контент курса.</p></div></div>`;
- const open=$('#openLessons');if(open)open.onclick=()=>renderCabinet('lessons');
- $$('.lesson').forEach(x=>x.onclick=()=>{$('#material').classList.add('show');$('#materialTitle').textContent=x.querySelector('b').textContent});
-}
-function openCabinet(){show('cabinet');renderCabinet('courses')}
-$$('[data-direction]').forEach(x=>x.addEventListener('click',()=>renderCatalog(x.dataset.direction)));
-$('#catalogList').addEventListener('click',e=>{const b=e.target.closest('.catalog-course');if(b)renderCourse(b.dataset.id)});
-$('#courseBack').onclick=()=>{hide('course');show('catalog')};
-$('#enrollBtn').onclick=()=>{hide('course');$('#selectedProgram').textContent=current.title;show('order')};
-$('#courseLoginBtn').onclick=openCabinet;
-$('#loginBtn').onclick=openCabinet;$('#heroLogin').onclick=openCabinet;
-$$('.cabinet-nav button').forEach(b=>b.onclick=()=>renderCabinet(b.dataset.tab));
-$('#consultBtn').onclick=()=>{ $('#selectedProgram').textContent='Консультация по подбору программы';show('order') };
-$('#orderForm').onsubmit=e=>{e.preventDefault();hide('order');$('#paymentProgram').textContent=current?current.title:'Консультация по подбору программы';show('payment')};
-$('#payBtn').onclick=()=>{hide('payment');openCabinet()};
-$$('[data-close]').forEach(b=>b.addEventListener('click',()=>hide(b.dataset.close)));
-Object.entries(overlays).forEach(([name,o])=>o.addEventListener('click',e=>{if(e.target===o)hide(name)}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){const active=Object.entries(overlays).find(([,o])=>o.classList.contains('show'));if(active)hide(active[0])}});
-// Навигация по странице
-$$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);if(id&&document.getElementById(id)){e.preventDefault();document.getElementById(id).scrollIntoView({behavior:'smooth'})}}));
+(() => {
+  'use strict';
+  const $ = s => document.querySelector(s);
+  const $$ = s => document.querySelectorAll(s);
+  const overlays = {catalog:$('#catalogOverlay'),course:$('#courseOverlay'),order:$('#orderOverlay'),payment:$('#paymentOverlay'),cabinet:$('#cabinetOverlay')};
+  const courses = {
+    pb01:{title:'Пожарная безопасность для руководителей и ответственных лиц',type:'ПОВЫШЕНИЕ КВАЛИФИКАЦИИ',code:'ПБ-01',hours:'16 часов',doc:'Удостоверение',price:'4 900 ₽',desc:'Демонстрационная программа для руководителей и работников, на которых возложены обязанности по обеспечению пожарной безопасности.'},
+    pb02:{title:'Обучение мерам пожарной безопасности',type:'ОБУЧЕНИЕ',code:'ПБ-02',hours:'40 часов',doc:'Удостоверение',price:'6 900 ₽',desc:'Демонстрационная программа обучения мерам пожарной безопасности с доступом к материалам в личном кабинете.'},
+    pb03:{title:'Пожарно-техническая подготовка работников',type:'ПОВЫШЕНИЕ КВАЛИФИКАЦИИ',code:'ПБ-03',hours:'72 часа',doc:'Удостоверение',price:'8 900 ₽',desc:'Демонстрационная программа системной подготовки работников по пожарно-техническому направлению.'},
+    pb04:{title:'Специалист по пожарной безопасности',type:'ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА',code:'ПБ-04',hours:'256 часов',doc:'Диплом о ПП',price:'19 900 ₽',desc:'Демонстрационная программа профессиональной переподготовки с итоговым документом о квалификации.'},
+    labor01:{title:'Охрана труда для руководителей и специалистов',type:'ПОВЫШЕНИЕ КВАЛИФИКАЦИИ',code:'ОТ-01',hours:'16 часов',doc:'Удостоверение',price:'4 900 ₽',desc:'Демонстрационная программа по охране труда для руководителей и специалистов.'},
+    industrial01:{title:'Промышленная безопасность: базовая подготовка',type:'ОБУЧЕНИЕ',code:'ПБР-01',hours:'24 часа',doc:'Удостоверение',price:'7 900 ₽',desc:'Демонстрационная программа для специалистов по промышленной безопасности.'},
+    electro01:{title:'Электробезопасность для работников',type:'ОБУЧЕНИЕ',code:'ЭБ-01',hours:'16 часов',doc:'Удостоверение',price:'4 500 ₽',desc:'Демонстрационная программа подготовки электротехнического персонала.'},
+    retrain01:{title:'Специалист по охране труда',type:'ПРОФЕССИОНАЛЬНАЯ ПЕРЕПОДГОТОВКА',code:'ПП-01',hours:'256 часов',doc:'Диплом о ПП',price:'21 900 ₽',desc:'Демонстрационная программа профессиональной переподготовки.'}
+  };
+  const directions = {
+    fire:['Пожарная безопасность',['pb01','pb02','pb03','pb04']],labor:['Охрана труда',['labor01']],industrial:['Промышленная безопасность',['industrial01']],electro:['Электробезопасность',['electro01']],retraining:['Профессиональная переподготовка',['retrain01']],other:['Другие направления',['pb01']]
+  };
+  let current = null;
+  let catalogDirection = 'fire';
+
+  const lock = () => document.body.classList.add('lock');
+  const unlock = () => document.body.classList.remove('lock');
+  function show(name){overlays[name].classList.add('show');lock()}
+  function hide(name){overlays[name].classList.remove('show');if(!Object.values(overlays).some(x=>x.classList.contains('show')))unlock()}
+
+  function renderCatalog(dir){
+    catalogDirection = dir;
+    const d = directions[dir] || directions.fire;
+    $('#catalogTitle').textContent = d[0];
+    $('#catalogSubtitle').textContent = 'Выберите конкретную программу обучения.';
+    $('#catalogList').innerHTML = d[1].map(id => {
+      const c = courses[id];
+      return `<div class="catalog-card"><div class="catalog-top"><span class="catalog-type">${c.type}</span><span class="code">${c.code}</span></div><h3>${c.title}</h3><div class="info-grid"><div class="info"><span>Срок</span><strong>${c.hours}</strong></div><div class="info"><span>Форма</span><strong>Дистанционно</strong></div><div class="info"><span>Стоимость</span><strong>${c.price}</strong></div><div class="info"><span>Документ</span><strong>${c.doc}</strong></div></div><button class="btn btn-primary full catalog-course" data-id="${id}" type="button">Открыть курс →</button></div>`;
+    }).join('');
+    show('catalog');
+  }
+
+  function renderCourse(id){
+    current = courses[id];
+    if(!current) return;
+    $('#courseTitle').textContent=current.title;
+    $('#courseCode').textContent=`${current.code} · ${current.type}`;
+    $('#courseHours').textContent=current.hours;
+    $('#courseDoc').textContent=current.doc;
+    $('#coursePrice').textContent=current.price;
+    $('#coursePrice2').textContent=current.price;
+    $('#courseDesc').textContent=current.desc;
+    hide('catalog');
+    show('course');
+  }
+
+  function renderCabinet(tab='courses'){
+    const main=$('#cabinetMain');
+    $$('.cabinet-nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+    if(tab==='courses') main.innerHTML=`<h2>Мои курсы</h2><p>Здесь слушатель видит доступное обучение и продолжает занятия.</p><div class="cabinet-course-card"><div class="top"><div><div class="kicker">ТЕКУЩЕЕ ОБУЧЕНИЕ</div><h3>${current?current.title:'Пожарная безопасность для руководителей и ответственных лиц'}</h3></div><span class="status">В процессе</span></div><div class="progress"><i></i></div><div class="progress-row"><span>Прогресс обучения</span><strong>38%</strong></div><button class="btn btn-primary" id="openLessons" style="margin-top:18px">Продолжить обучение →</button></div><div class="cabinet-tiles"><div class="tile"><b>1</b><span>Курс в обучении</span></div><div class="tile"><b>38%</b><span>Прогресс курса</span></div><div class="tile"><b>0</b><span>Документов доступно</span></div></div>`;
+    if(tab==='documents') main.innerHTML=`<h2>Документы</h2><p>Итоговые документы слушателя.</p><div class="cabinet-panel"><div class="document-row"><strong>Удостоверение о повышении квалификации</strong><span>Будет доступно после обучения</span></div><div class="document-row"><strong>Договор на обучение</strong><span>Демонстрационный документ</span></div></div>`;
+    if(tab==='profile') main.innerHTML=`<h2>Профиль</h2><p>Данные тестового пользователя.</p><div class="cabinet-panel"><h3 style="margin:0 0 12px;color:var(--ink)">Тестовый слушатель</h3><div class="document-row"><strong>Имя</strong><span>Иван Петров</span></div><div class="document-row"><strong>E-mail</strong><span>demo@fcsp-phoenix.example</span></div><div class="document-row"><strong>Телефон</strong><span>8 800 000-00-00</span></div></div>`;
+    if(tab==='lessons') main.innerHTML=`<h2>Обучение</h2><p>Курс разбит на модули и уроки. В прототипе материалы открываются по клику.</p><div class="cabinet-panel"><h3 style="margin:0;color:var(--ink)">${current?current.title:'Пожарная безопасность'}</h3><ul class="lesson-list">${['Введение в курс','Основные требования','Организация работы','Практический модуль','Итоговый материал'].map((x,i)=>`<li class="lesson" data-lesson="${i}"><b>${String(i+1).padStart(2,'0')} · ${x}</b><span>${i<2?'Пройдено':'Открыть урок →'}</span></li>`).join('')}</ul><div class="material" id="material"><h4 id="materialTitle">Материал урока</h4><p>Здесь в реальном кабинете открывается учебный материал: текст, видео, файл или другой контент курса.</p></div></div>`;
+    const open=$('#openLessons');
+    if(open) open.onclick=()=>renderCabinet('lessons');
+    $$('.lesson').forEach(x=>x.onclick=()=>{$('#material').classList.add('show');$('#materialTitle').textContent=x.querySelector('b').textContent});
+  }
+  function openCabinet(){show('cabinet');renderCabinet('courses')}
+
+  $$('.program').forEach(x=>x.addEventListener('click',()=>renderCatalog(x.dataset.direction)));
+  $('#catalogList').addEventListener('click',e=>{const b=e.target.closest('.catalog-course');if(b)renderCourse(b.dataset.id)});
+  $('#courseBack').onclick=()=>{hide('course');renderCatalog(catalogDirection)};
+  $('#enrollBtn').onclick=()=>{hide('course');$('#selectedProgram').textContent=current.title;show('order')};
+  $('#courseLoginBtn').onclick=openCabinet;
+  $('#loginBtn').onclick=openCabinet;
+  $('#heroLogin').onclick=openCabinet;
+  $('#mobileLogin').onclick=openCabinet;
+  $$('.cabinet-nav button').forEach(b=>b.onclick=()=>renderCabinet(b.dataset.tab));
+  $('#consultBtn').onclick=()=>{$('#selectedProgram').textContent='Консультация по подбору программы';show('order')};
+  $('#orderForm').onsubmit=e=>{e.preventDefault();hide('order');$('#paymentProgram').textContent=current?current.title:'Консультация по подбору программы';show('payment')};
+  $('#payBtn').onclick=()=>{hide('payment');openCabinet()};
+  $$('[data-close]').forEach(b=>b.addEventListener('click',()=>hide(b.dataset.close)));
+  Object.entries(overlays).forEach(([name,o])=>o.addEventListener('click',e=>{if(e.target===o)hide(name)}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){const active=Object.entries(overlays).find(([,o])=>o.classList.contains('show'));if(active)hide(active[0])}});
+
+  const menuBtn=$('#menuBtn'),mobileMenu=$('#mobileMenu');
+  menuBtn.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.remove('open')));
 })();
 </script>
+<style>
+.mobile-menu{display:none}
+@media(max-width:820px){.mobile-menu{position:absolute;left:0;right:0;top:68px;padding:14px 16px 18px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(8,28,49,.08)}.mobile-menu.open{display:grid;gap:4px}.mobile-menu a{padding:12px 8px;color:var(--ink);font-size:12px;font-weight:750;border-bottom:1px solid #eef2f5}.mobile-menu .btn{margin-top:8px}}
+</style>
 </body>
 </html>
